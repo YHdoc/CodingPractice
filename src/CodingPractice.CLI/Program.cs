@@ -7,6 +7,7 @@ using CodingPractice.Core.Models;
 using CodingPractice.Core.Base;
 using CodingPractice.Problems.Baekjoon;
 using CodingPractice.Problems.Programmers;
+using CodingPractice.Problems.etc;
 
 namespace CodingPractice.CLI
 {
@@ -61,6 +62,7 @@ namespace CodingPractice.CLI
                 _problemRegistry.RegisterProblem(new Baekjoon1000());
                 _problemRegistry.RegisterProblem(new Programmers42576());
                 _problemRegistry.RegisterProblem(new MergeAndSortIntervals());
+                _problemRegistry.RegisterProblem(new DP_MaximumExp());
             }
             catch (Exception ex)
             {
