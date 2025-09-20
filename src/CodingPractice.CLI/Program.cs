@@ -199,6 +199,16 @@ namespace CodingPractice.CLI
         {
             Console.WriteLine("=== 코딩 테스트 연습 도구 ===");
             Console.WriteLine();
+            Console.WriteLine("프로젝트 구조:");
+            Console.WriteLine("  CodingPractice.CLI (시작 프로젝트) ⭐");
+            Console.WriteLine("  CodingPractice.Core - 공통 모델 및 인터페이스");
+            Console.WriteLine("  CodingPractice.Problems - 문제 구현들");
+            Console.WriteLine("  CodingPractice.Runner - 실행 엔진 (미사용)");
+            Console.WriteLine();
+            Console.WriteLine("실행 방법:");
+            Console.WriteLine("  루트 디렉토리에서: dotnet run --project src/CodingPractice.CLI [명령어]");
+            Console.WriteLine("  CLI 디렉토리에서:  cd src/CodingPractice.CLI && dotnet run [명령어]");
+            Console.WriteLine();
             Console.WriteLine("사용법:");
             Console.WriteLine("  list [필터]           - 모든 문제 목록 보기");
             Console.WriteLine("    필터: baekjoon, programmers, leetcode, hackerrank, easy, medium, hard");
@@ -207,12 +217,18 @@ namespace CodingPractice.CLI
             Console.WriteLine("  info <문제ID>         - 문제 상세 정보 보기");
             Console.WriteLine("  help                  - 도움말 보기");
             Console.WriteLine();
-            Console.WriteLine("예시:");
+            Console.WriteLine("예시 (루트 디렉토리에서):");
+            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI list");
+            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI list baekjoon");
+            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI run baekjoon-1000");
+            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI search array");
+            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI info baekjoon-1000");
+            Console.WriteLine();
+            Console.WriteLine("예시 (CLI 디렉토리에서):");
+            Console.WriteLine("  cd src/CodingPractice.CLI");
             Console.WriteLine("  dotnet run list");
-            Console.WriteLine("  dotnet run list baekjoon");
             Console.WriteLine("  dotnet run run baekjoon-1000");
             Console.WriteLine("  dotnet run search array");
-            Console.WriteLine("  dotnet run info baekjoon-1000");
         }
     }
 }

@@ -47,35 +47,66 @@ CodingPractice/
 
 ## 🚀 사용법
 
+### 프로젝트 구조 및 시작 프로젝트
+
+이 솔루션은 4개의 프로젝트로 구성되어 있습니다:
+
+- **CodingPractice.CLI** (시작 프로젝트) ⭐ - 사용자 인터페이스
+- **CodingPractice.Core** - 공통 모델 및 인터페이스
+- **CodingPractice.Problems** - 문제 구현들
+- **CodingPractice.Runner** - 실행 엔진 (미사용)
+
+**시작 프로젝트는 `CodingPractice.CLI`입니다!**
+
 ### 기본 명령어
 
 ```bash
-# 도움말 보기
+# 루트 디렉토리에서 실행 (권장)
+dotnet run --project src/CodingPractice.CLI
+
+# 또는 CLI 디렉토리로 이동 후 실행
+cd src/CodingPractice.CLI
 dotnet run
 
+# 도움말 보기
+dotnet run --project src/CodingPractice.CLI
+
 # 모든 문제 목록 보기
-dotnet run list
+dotnet run --project src/CodingPractice.CLI list
 
 # 사이트별 문제 목록 보기
-dotnet run list baekjoon
-dotnet run list programmers
-dotnet run list leetcode
+dotnet run --project src/CodingPractice.CLI list baekjoon
+dotnet run --project src/CodingPractice.CLI list programmers
+dotnet run --project src/CodingPractice.CLI list leetcode
 
 # 난이도별 문제 목록 보기
-dotnet run list easy
-dotnet run list medium
-dotnet run list hard
+dotnet run --project src/CodingPractice.CLI list easy
+dotnet run --project src/CodingPractice.CLI list medium
+dotnet run --project src/CodingPractice.CLI list hard
 
 # 특정 문제 실행
-dotnet run run baekjoon-1000
-dotnet run run programmers-42576
+dotnet run --project src/CodingPractice.CLI run baekjoon-1000
+dotnet run --project src/CodingPractice.CLI run programmers-42576
 
 # 문제 검색
-dotnet run search array
-dotnet run search "dynamic programming"
+dotnet run --project src/CodingPractice.CLI search array
+dotnet run --project src/CodingPractice.CLI search "dynamic programming"
 
 # 문제 상세 정보 보기
-dotnet run info baekjoon-1000
+dotnet run --project src/CodingPractice.CLI info baekjoon-1000
+```
+
+### 간편 실행 (CLI 디렉토리에서)
+
+```bash
+# CLI 디렉토리로 이동
+cd src/CodingPractice.CLI
+
+# 이제 간단하게 실행 가능
+dotnet run
+dotnet run list
+dotnet run run baekjoon-1000
+dotnet run search array
 ```
 
 ### 새 문제 추가하기
@@ -141,6 +172,27 @@ dotnet run info baekjoon-1000
 - **.NET 8.0** 이상
 - **C# 12.0** 이상
 - **Visual Studio 2022** 또는 **VS Code** 권장
+
+### 프로젝트 실행 방법
+
+1. **Visual Studio에서 실행**:
+   - `CodingPractice.CLI`를 시작 프로젝트로 설정
+   - F5 또는 Ctrl+F5로 실행
+
+2. **명령줄에서 실행**:
+   ```bash
+   # 루트 디렉토리에서
+   dotnet run --project src/CodingPractice.CLI
+   
+   # 또는 CLI 디렉토리에서
+   cd src/CodingPractice.CLI
+   dotnet run
+   ```
+
+3. **솔루션 빌드**:
+   ```bash
+   dotnet build CodingPractice.sln
+   ```
 
 ## 📈 확장 계획
 
