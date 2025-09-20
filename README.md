@@ -49,12 +49,11 @@ CodingPractice/
 
 ### 프로젝트 구조 및 시작 프로젝트
 
-이 솔루션은 4개의 프로젝트로 구성되어 있습니다:
+이 솔루션은 3개의 프로젝트로 구성되어 있습니다:
 
 - **CodingPractice.CLI** (시작 프로젝트) ⭐ - 사용자 인터페이스
 - **CodingPractice.Core** - 공통 모델 및 인터페이스
 - **CodingPractice.Problems** - 문제 구현들
-- **CodingPractice.Runner** - 실행 엔진 (미사용)
 
 **시작 프로젝트는 `CodingPractice.CLI`입니다!**
 
@@ -161,7 +160,7 @@ dotnet run search array
 - **Hard**: 어려운 문제
 - **Expert**: 전문가 수준 문제
 
-### 알고리즘 태그
+### 알고리즘 태그(예정)
 - **기본 자료구조**: Array, String, HashTable, LinkedList, Stack, Queue, Tree 등
 - **알고리즘**: Sorting, Searching, BinarySearch, TwoPointers, Greedy, DynamicProgramming 등
 - **그래프**: BFS, DFS, TopologicalSort, ShortestPath 등
@@ -197,24 +196,9 @@ dotnet run search array
 ## 📈 확장 계획
 
 - [ ] 웹 인터페이스 추가
-- [ ] 문제 통계 및 분석 기능
-- [ ] 자동 문제 추천 시스템
-- [ ] GitHub Actions를 통한 자동 빌드 및 테스트
 - [ ] 문제별 성능 벤치마크
-- [ ] 학습 로드맵 생성
 
-## 🤝 기여하기
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📝 라이선스
 
 이 프로젝트는 개인 학습 목적으로 만들어졌습니다.
-
----
-
-**Happy Coding! 🎉**

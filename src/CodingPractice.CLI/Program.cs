@@ -203,7 +203,6 @@ namespace CodingPractice.CLI
             Console.WriteLine("  CodingPractice.CLI (시작 프로젝트) ⭐");
             Console.WriteLine("  CodingPractice.Core - 공통 모델 및 인터페이스");
             Console.WriteLine("  CodingPractice.Problems - 문제 구현들");
-            Console.WriteLine("  CodingPractice.Runner - 실행 엔진 (미사용)");
             Console.WriteLine();
             Console.WriteLine("실행 방법:");
             Console.WriteLine("  루트 디렉토리에서: dotnet run --project src/CodingPractice.CLI [명령어]");
