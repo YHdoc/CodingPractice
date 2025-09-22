@@ -29,33 +29,43 @@ namespace CodingPractice.Problems.Programmers
 
             throw new ArgumentException("잘못된 입력 형식입니다.");
         }
+        private int ToMinutes(int hhmm)
+        {
+            int h = hhmm / 100;
+            int m = hhmm % 100;
+            return h * 60 + m;
+        }
 
-        //아 타입 맞춰주고 싶은데 string이 나을 것 같다\
         public string Solution(int[] schedules, int[,] timelogs, int startday)
         {
             int answer = 0;
 
             for (int i = 0; i < schedules.Length; i++)
             {
-                bool isValid = true;
+                bool allOnTime = true; // 기본 가정: 지각 없음
+
                 for (int j = 0; j < 7; j++)
                 {
-                    if ((startday + j - 1) % 7 > 4)
+                    int day = (startday - 1 + j) % 7; // 0=월, 1=화, ..., 6=일
+                    if (day >= 5) continue; // 토,일 건너뜀
+
+                    int hope = ToMinutes(schedules[i]);
+                    int limit = hope + 10; // 희망 출근 시각 + 10분
+                    int actual = ToMinutes(timelogs[i, j]);
+
+                    if (actual > limit) // 평일 중 하루라도 지각이면 탈락
                     {
-                        continue;
-                    }
-                    if (!(timelogs[i, j] <= schedules[i] + 10))
-                    {
-                        isValid = false;
+                        allOnTime = false;
                         break;
                     }
                 }
-                if (isValid) answer++;
+
+                if (allOnTime) answer++;
             }
 
             return answer.ToString();
         }
-        
+
 
         public override List<TestCase> GetTestCases()
         {
