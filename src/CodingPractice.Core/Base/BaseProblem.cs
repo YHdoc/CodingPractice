@@ -1,7 +1,8 @@
-using System;
-using System.Collections.Generic;
 using CodingPractice.Core.Interfaces;
 using CodingPractice.Core.Models;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace CodingPractice.Core.Base
 {
@@ -99,6 +100,25 @@ namespace CodingPractice.Core.Base
         {
             if (actual == null && expected == null) return true;
             if (actual == null || expected == null) return false;
+
+            // 타입이 다르면 false
+            if (actual.GetType() != expected.GetType()) return false;
+
+            // 배열이나 IEnumerable 비교 (예: int[], List<int>)
+            if (actual is IEnumerable actualEnum && expected is IEnumerable expectedEnum
+                && !(actual is string)) // 문자열은 IEnumerable<char>라 따로 처리
+            {
+                var aList = actualEnum.Cast<object>().ToList();
+                var eList = expectedEnum.Cast<object>().ToList();
+                if (aList.Count != eList.Count) return false;
+                for (int i = 0; i < aList.Count; i++)
+                {
+                    if (!AreEqual(aList[i], eList[i])) return false;
+                }
+                return true;
+            }
+
+            // 기본 비교
             return actual.Equals(expected);
         }
     }

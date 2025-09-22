@@ -61,6 +61,7 @@ namespace CodingPractice.CLI
             {
                 _problemRegistry.RegisterProblem(new Baekjoon1000());
                 _problemRegistry.RegisterProblem(new Programmers42576());
+                _problemRegistry.RegisterProblem(new Programmers388351());
                 _problemRegistry.RegisterProblem(new MergeAndSortIntervals());
                 _problemRegistry.RegisterProblem(new DP_MaximumExp());
             }
@@ -200,37 +201,40 @@ namespace CodingPractice.CLI
 
         private static void ShowHelp()
         {
-            Console.WriteLine("=== 코딩 테스트 연습 도구 ===");
-            Console.WriteLine();
-            Console.WriteLine("프로젝트 구조:");
-            Console.WriteLine("  CodingPractice.CLI (시작 프로젝트) ⭐");
-            Console.WriteLine("  CodingPractice.Core - 공통 모델 및 인터페이스");
-            Console.WriteLine("  CodingPractice.Problems - 문제 구현들");
-            Console.WriteLine();
-            Console.WriteLine("실행 방법:");
-            Console.WriteLine("  루트 디렉토리에서: dotnet run --project src/CodingPractice.CLI [명령어]");
-            Console.WriteLine("  CLI 디렉토리에서:  cd src/CodingPractice.CLI && dotnet run [명령어]");
-            Console.WriteLine();
-            Console.WriteLine("사용법:");
-            Console.WriteLine("  list [필터]           - 모든 문제 목록 보기");
-            Console.WriteLine("    필터: baekjoon, programmers, leetcode, hackerrank, easy, medium, hard");
-            Console.WriteLine("  run <문제ID>          - 특정 문제 실행");
-            Console.WriteLine("  search <키워드>       - 문제 검색");
-            Console.WriteLine("  info <문제ID>         - 문제 상세 정보 보기");
-            Console.WriteLine("  help                  - 도움말 보기");
-            Console.WriteLine();
-            Console.WriteLine("예시 (루트 디렉토리에서):");
-            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI list");
-            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI list baekjoon");
-            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI run baekjoon-1000");
-            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI search array");
-            Console.WriteLine("  dotnet run --project src/CodingPractice.CLI info baekjoon-1000");
-            Console.WriteLine();
-            Console.WriteLine("예시 (CLI 디렉토리에서):");
-            Console.WriteLine("  cd src/CodingPractice.CLI");
-            Console.WriteLine("  dotnet run list");
-            Console.WriteLine("  dotnet run run baekjoon-1000");
-            Console.WriteLine("  dotnet run search array");
+            Console.WriteLine(@"
+=== 코딩 테스트 연습 도구 ===
+
+프로젝트 구조:
+    CodingPractice.CLI (시작 프로젝트) ⭐
+    CodingPractice.Core - 공통 모델 및 인터페이스
+    CodingPractice.Problems - 문제 구현들
+
+실행 방법:
+    루트 디렉토리에서: dotnet run --project src/CodingPractice.CLI [명령어]
+    CLI 디렉토리에서:  cd src/CodingPractice.CLI && dotnet run [명령어]
+
+사용법:
+    list [필터]           - 모든 문제 목록 보기
+    필터: baekjoon, programmers, leetcode, hackerrank, easy, medium, hard
+    run <문제ID>          - 특정 문제 실행
+    search <키워드>       - 문제 검색
+    info <문제ID>         - 문제 상세 정보 보기
+    help                  - 도움말 보기
+
+예시 (루트 디렉토리에서):
+    dotnet run --project src/CodingPractice.CLI list
+    dotnet run --project src/CodingPractice.CLI list baekjoon
+    dotnet run --project src/CodingPractice.CLI run baekjoon-1000
+    dotnet run --project src/CodingPractice.CLI search array
+    dotnet run --project src/CodingPractice.CLI info baekjoon-1000
+
+예시 (CLI 디렉토리에서):
+    cd src/CodingPractice.CLI
+    dotnet run list
+    dotnet run run baekjoon-1000
+    dotnet run search array
+");
         }
+
     }
 }
