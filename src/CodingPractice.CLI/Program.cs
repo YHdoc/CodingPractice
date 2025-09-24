@@ -60,6 +60,7 @@ namespace CodingPractice.CLI
             try
             {
                 _problemRegistry.RegisterProblem(new Baekjoon1000());
+                _problemRegistry.RegisterProblem(new Baekjoon9184());
                 _problemRegistry.RegisterProblem(new Programmers42576());
                 _problemRegistry.RegisterProblem(new Programmers388351());
                 _problemRegistry.RegisterProblem(new MergeAndSortIntervals());
